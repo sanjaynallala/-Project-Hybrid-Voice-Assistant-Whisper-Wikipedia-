@@ -1,0 +1,267 @@
+PROJECT: Hybrid Voice Assistant (Whisper + Wikipedia)
+🔵 PHASE 1 — Install Python Properly
+✅ Step 1: Download Python 3.10.9
+
+Go to:
+
+👉 https://www.python.org/downloads/release/python-3109/
+
+Download:
+
+Windows installer (64-bit)
+
+✅ Step 2: Install Python
+
+During installation:
+
+✔ Check Add Python to PATH
+✔ Click Customize Installation
+✔ Enable all optional features
+✔ Install for all users
+
+Finish installation.
+
+✅ Step 3: Verify Installation
+
+Open PowerShell:
+
+py -0
+
+
+You should see:
+
+-V:3.10 Python 3.10.9
+
+
+Then:
+
+py -3.10 --version
+
+
+Should show:
+
+Python 3.10.9
+
+🔵 PHASE 2 — Create Project Folder
+✅ Step 4: Create Folder
+
+Go to Desktop.
+
+Create folder:
+
+speech_nlp_project
+
+✅ Step 5: Open PowerShell Inside Folder
+
+Click address bar → type:
+
+powershell
+
+
+Press Enter.
+
+🔵 PHASE 3 — Create Virtual Environment
+✅ Step 6: Create venv
+py -3.10 -m venv venv
+
+✅ Step 7: Activate venv
+.\venv\Scripts\Activate
+
+
+You should see:
+
+(venv) PS C:\Users\Sanjay\Desktop\speech_nlp_project>
+
+✅ Step 8: Confirm Python Version
+python --version
+
+
+Must show:
+
+Python 3.10.9
+
+🔵 PHASE 4 — Install Required Libraries
+✅ Step 9: Install Dependencies
+pip install openai-whisper torch sounddevice scipy pyttsx3 wikipedia
+
+
+Wait until installation completes.
+
+🔵 PHASE 5 — Install FFmpeg (VERY IMPORTANT)
+
+Whisper requires FFmpeg.
+
+✅ Step 10: Download FFmpeg
+
+Go to:
+
+👉 https://www.gyan.dev/ffmpeg/builds/
+
+Download:
+
+ffmpeg-release-essentials.zip and 72z600.exe
+
+✅ Step 11: Extract
+
+Extract zip.
+
+Rename folder to:
+
+ffmpeg
+
+
+Move it to:
+
+C:\ffmpeg
+
+
+So path becomes:
+
+C:\ffmpeg\bin
+
+🔵 PHASE 6 — Add FFmpeg to Environment Variables
+✅ Step 12: Open Environment Variables
+
+Press Windows key
+
+Search: Environment Variables
+
+Click: Edit the system environment variables
+
+Click: Environment Variables
+
+✅ Step 13: Edit PATH
+
+Under:
+
+System variables
+
+
+Find:
+
+Path
+
+
+Click Edit.
+
+Click New.
+
+Add:
+
+C:\ffmpeg\bin
+
+
+Click OK → OK → OK.
+
+✅ Step 14: Restart PowerShell
+
+Close all terminals.
+
+Open new PowerShell.
+
+Test:
+
+ffmpeg -version
+
+
+If version appears → correct.
+
+🔵 PHASE 7 — Create Project Files
+✅ Step 15: Create assistant.py
+
+Inside project folder:
+
+Create file:
+
+assistant.py
+
+
+Paste your final hybrid code.
+
+🔵 PHASE 8 — How It Works Internally
+🎤 Recording
+
+Uses:
+
+sounddevice
+scipy.io.wavfile
+
+
+Creates:
+
+audio.wav
+
+🧠 Speech Recognition
+
+Uses:
+
+whisper.load_model("base")
+model.transcribe()
+
+
+This uses:
+
+Transformer model
+
+PyTorch backend
+
+CPU inference
+
+🌐 Knowledge Search
+
+Uses:
+
+wikipedia.summary()
+
+
+Requires internet.
+
+🔊 Text-to-Speech
+
+Uses:
+
+pyttsx3
+
+
+Offline speech synthesis.
+
+🔵 PHASE 9 — Final Execution
+✅ Step 16: Run Assistant
+python assistant.py
+
+
+Flow:
+
+Record → Transcribe → Process → Search → Speak
+
+🔵 PHASE 10 — Troubleshooting You Faced
+
+You solved:
+
+✔ Python version incompatibility
+✔ Tokenizers Rust error
+✔ Transformers version issue
+✔ OpenAI quota error
+✔ FFmpeg not recognized
+✔ Environment variable setup
+✔ PATH configuration
+✔ Microphone detection
+✔ Sample rate error
+✔ venv activation issue
+
+That’s real debugging experience.
+
+🎓 Final Architecture
+Windows OS
+   ↓
+Python 3.10
+   ↓
+Virtual Environment
+   ↓
+Whisper + Torch
+   ↓
+Wikipedia API
+   ↓
+pyttsx3
+   ↓
+Hybrid Voice Assistant
