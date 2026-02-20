@@ -265,3 +265,12 @@ Wikipedia API
 pyttsx3
    ↓
 Hybrid Voice Assistant
+
+🔎 Your Project Flow (Technically Correct Version)
+
+1️⃣ User speaks through microphone.
+2️⃣ Audio input is captured and passed to OpenAI Whisper, which converts speech into text (Speech-to-Text).
+3️⃣ The generated text is processed using basic NLP techniques to understand the user query.
+4️⃣ The processed query is sent to the Wikipedia API to fetch relevant information.
+5️⃣ The retrieved response text is converted into speech using pyttsx3 (Text-to-Speech).
+6️⃣ The assistant delivers the spoken response back to the user.
